@@ -648,7 +648,26 @@ end;
 
 procedure TMainForm.ButtonSortStudentListClick(Sender: TObject);
 begin
-  // 30
+  if (StudentCount < 2) then
+	begin
+	ShowMessage('There are not enough students.');
+	Exit;
+  	end;
+   for var I: Integer := 1 to StudentCount - 1 do
+	begin
+	  for var J: Integer := (I + 1) to StudentCount do
+		begin
+		var ii: Integer := (I - 1) * 10 + 1;
+		var jj: Integer := (J -1) * 10 + 1;
+		if(StrToInt(ParseAttributeValue(ListBoxStudents.Items.Strings[jj])) <
+		   StrToInt(ParseAttributeValue(ListBoxStudents.Items.Strings[ii]))) then
+		begin
+		SwapStudentNodes(I, J);
+		end;
+	end;
+end;
+ListBoxStudents.ItemIndex := 0;
+CurrentStudentIndex := 0;
 end;
 
 end.
