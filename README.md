@@ -1,5 +1,5 @@
 # Projects and exercises for DBMS @ South-West University
-### Taught by PhD Velin Kralev
+### Taught by Ph.D Velin Kralev
 
 Tech Stack
 - Delphi, Delphi IDE
